@@ -1,0 +1,72 @@
+voici mon prompte [### **Création d'un formulaire HTML interactif pour le Tage Mage avec correction détaillée et design minimaliste**
+
+Vous êtes un expert en préparation au Tage Mage, un test d’admission aux écoles de commerce. Votre mission est de concevoir un formulaire HTML interactif, complet et attrayant, pour évaluer les compétences des candidats dans les six catégories principales du Tage Mage :
+
+1. **Calcul** : Résolution de problèmes mathématiques et arithmétiques.
+2. **Conditions minimales** : Raisonnement logique et déduction.
+3. **Expression** : Analyse verbale et compréhension de texte.
+4. **Logique** : Résolution de problèmes logiques et spatiaux.
+5. **Matrices** : Compléter des suites logiques sous forme de matrices.
+6. **Compréhension** : Lecture et interprétation de passages complexes.
+
+### **Détails de conception et fonctionnalités attendues :**
+
+1. **Structure du formulaire :**
+   - Inclure **10 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
+   - Chaque question doit afficher son **catégorie** en en-tête, suivie de l’énoncé.
+   - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
+   - Les réponses correctes doivent être masquées dans le code source.
+   - Important : Toutes les questions doivent être représentées de manière claire et complète, sans éléments manquants ou ambigus.
+
+2. **Progression et interactivité :**
+   - Les questions doivent varier en difficulté : **intermédiaire**, **difficile**.
+   - Le formulaire doit inclure une vérification à la soumission pour s’assurer que toutes les questions ont été répondues avant le calcul du score.
+
+3. **Affichage des résultats :**
+   - À la soumission, le formulaire :
+     - Calcule et affiche le **score final**.
+     - Liste les **questions incorrectes** avec :
+       - La réponse choisie par l’utilisateur.
+       - La **bonne réponse**.
+     - Permet une révision claire pour que l'utilisateur identifie ses erreurs.
+
+4. **Direction artistique (UI/UX) :**
+   - **Minimalisme et clarté** :
+     - Fond : `#313338` (gris foncé).
+     - Texte : `#FFFFFF` (blanc).
+     - Utilisation d’une police moderne sans-serif comme `Roboto`, `Helvetica` ou `Arial`.
+   - **Mise en page ergonomique** :
+     - Espacements bien définis entre les sections et les questions.
+     - Boutons et champs d’entrée épurés avec :
+       - Coins légèrement arrondis.
+       - Effets au survol (hover) : par exemple, éclaircir légèrement le bouton ou souligner les liens.
+   - **Compatibilité mobile** :
+     - Le design doit être **responsive**, adapté aux écrans d’ordinateurs, tablettes et smartphones.
+
+5. **Fonctionnalités techniques :**
+   - Implémenter en **HTML**, **CSS** et **JavaScript**.
+   - Ajouter une logique JavaScript pour :
+     - Valider le formulaire.
+     - Calculer dynamiquement les scores.
+     - Afficher les résultats et les corrections **sans rechargement de page**.
+   - Permettre l’exportation des résultats et des corrections en **fichier texte** ou **PDF**.
+
+6. **Accessibilité :**
+   - Veiller à ce que le formulaire soit accessible :
+     - Support pour les **lecteurs d’écran**.
+     - Contraste suffisant entre le texte et le fond.
+   - Assurer une navigation fluide avec le clavier.
+
+7. **Code modulaire et réutilisable :**
+   - Condence tout les code dans un même fichier que ce soit le javascript le css ou le html.
+
+8. **Extension suggérée :**
+   - Ajouter une **fonctionnalité de chronomètre**, permettant aux utilisateurs de gérer leur temps, comme lors d’un test réel.
+   - Inclure un **bouton de réinitialisation** pour permettre aux utilisateurs de refaire le test.
+
+---
+
+### **Livrable attendu :**
+Un formulaire interactif et élégant, conçu pour offrir une expérience utilisateur optimale tout en restant conforme aux standards du Tage Mage.]
+
+
