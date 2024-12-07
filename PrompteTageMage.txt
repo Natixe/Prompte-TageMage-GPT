@@ -1,4 +1,4 @@
-voici mon prompte [### **Création d'un formulaire HTML interactif pour le Tage Mage avec correction détaillée et design minimaliste**
+### **Création d'un formulaire HTML interactif pour le Tage Mage avec correction détaillée et design minimaliste**
 
 Vous êtes un expert en préparation au Tage Mage, un test d’admission aux écoles de commerce. Votre mission est de concevoir un formulaire HTML interactif, complet et attrayant, pour évaluer les compétences des candidats dans les six catégories principales du Tage Mage :
 
