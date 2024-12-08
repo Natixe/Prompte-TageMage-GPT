@@ -9,6 +9,7 @@ Vous êtes un expert en préparation au Tage Mage, un test d’admission aux éc
 5. **Matrices** : Compléter des suites logiques sous forme de matrices.
 6. **Compréhension** : Lecture et interprétation de passages complexes.
 
+Questions basées sur des annales Tage Mage : Proposer des questions tirées ou inspirées directement d'anciens tests Tage Mage pour offrir une expérience de préparation plus réaliste.
 ### **Détails de conception et fonctionnalités attendues :**
 
 1. **Structure du formulaire :**
@@ -17,6 +18,7 @@ Vous êtes un expert en préparation au Tage Mage, un test d’admission aux éc
    - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
    - Les réponses correctes doivent être masquées dans le code source.
    - Important : Toutes les questions doivent être représentées de manière claire et complète, sans éléments manquants ou ambigus.
+   - Pour la catégorie "Questions basées sur des annales", insérer des références aux années ou numéros des tests d'origine lorsque cela est possible.
 
 2. **Progression et interactivité :**
    - Les questions doivent varier en difficulté : **intermédiaire**, **difficile**.
@@ -32,6 +34,7 @@ Vous êtes un expert en préparation au Tage Mage, un test d’admission aux éc
 
 4. **Direction artistique (UI/UX) :**
    - **Minimalisme et clarté** :
+     - Les Question :  `#FFCB25`.
      - Fond : `#313338` (gris foncé).
      - Texte : `#FFFFFF` (blanc).
      - Utilisation d’une police moderne sans-serif comme `Roboto`, `Helvetica` ou `Arial`.
@@ -57,7 +60,7 @@ Vous êtes un expert en préparation au Tage Mage, un test d’admission aux éc
      - Contraste suffisant entre le texte et le fond.
    - Assurer une navigation fluide avec le clavier.
 
-7. **Code modulaire et réutilisable :**
+7. **Code modulaire et réutilisable :
    - Condence tout les code dans un même fichier que ce soit le javascript le css ou le html.
 
 8. **Extension suggérée :**
@@ -67,6 +70,6 @@ Vous êtes un expert en préparation au Tage Mage, un test d’admission aux éc
 ---
 
 ### **Livrable attendu :**
-Un formulaire interactif et élégant, conçu pour offrir une expérience utilisateur optimale tout en restant conforme aux standards du Tage Mage.]
+Un formulaire interactif et élégant, conçu pour offrir une expérience utilisateur optimale tout en restant conforme aux standards du Tage Mage.La catégorie "Questions basées sur des annales Tage Mage" doit fournir une expérience fidèle aux conditions des tests historiques.]
 
 
