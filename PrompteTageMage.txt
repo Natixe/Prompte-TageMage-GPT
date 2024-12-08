@@ -13,7 +13,7 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
 ### **Détails de conception et fonctionnalités attendues :**
 
 1. **Structure du formulaire :**
-   - Inclure **100 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
+   - Inclure **50 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
    - Chaque question doit afficher son **catégorie** en en-tête, suivie de l’énoncé.
    - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
    - Les réponses correctes doivent être masquées dans le code source.
@@ -69,6 +69,10 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
 8. **Extension suggérée :**
    - Ajouter une **fonctionnalité de chronomètre**, permettant aux utilisateurs de gérer leur temps, comme lors d’un test réel.
    - Inclure un **bouton de réinitialisation** pour permettre aux utilisateurs de refaire le test.
+
+
+### **Clause obligatoire :**
+L'intelligence artificielle doit fournir une réponse complète et inclure les 50 questions comme spécifié.Aucune question ou élément de conception ne doit être omis. Les réponses doivent être intégralement fournies pour respecter les spécifications du projet.
 
 ---
 
@@ -216,7 +220,7 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
 
     <div id="result-section" class="result-block hidden">
         <h2>Résultats</h2>
-        <p>Score : <span id="score"></span>/100</p>
+        <p>Score : <span id="score"></span>/50</p>
         <div id="review-section"></div>
     </div>
 </main>
@@ -241,7 +245,7 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
             if(seconds < 10) seconds = "0" + seconds;
             document.getElementById('time-remaining').textContent = minutes + ":" + seconds;
         }
-    }, 1000);
+    }, 0);
 
     // --------------------------------------
     // Form validation, scoring and display
@@ -256,7 +260,7 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
 
     function submitForm() {
         // Check if all questions are answered
-        const questionNames = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q74","q75","q76","q77","q78","q79","q80","q81","q82","q83","q84","q85","q86","q87","q88","q89","q90","q91","q92","q93","q94","q95","q96","q97","q98","q99","q100"];
+        const questionNames = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50"];
         for (let q of questionNames) {
             if(!form.querySelector('input[name="'+q+'"]:checked')) {
                 alert("Veuillez répondre à toutes les questions avant de valider.");
@@ -318,7 +322,7 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
     // Export results
     exportBtn.addEventListener('click', function(){
         let textContent = "Résultats du test Tage Mage\n\n";
-        textContent += "Score: " + scoreSpan.textContent + "/100\n\n";
+        textContent += "Score: " + scoreSpan.textContent + "/50\n\n";
         const reviews = reviewSection.querySelectorAll('.answer-review');
         reviews.forEach((rev, i) => {
             const question = rev.querySelector('strong').textContent;
