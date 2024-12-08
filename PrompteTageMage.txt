@@ -2,38 +2,46 @@
 
 Vous êtes un expert en préparation au Tage Mage, un test d’admission aux écoles de commerce. Votre mission est de concevoir un formulaire HTML interactif, complet et attrayant, pour évaluer les compétences des candidats dans les six catégories principales du Tage Mage :
 
-1. **Calcul** : Résolution de problèmes mathématiques et arithmétiques.
-2. **Conditions minimales** : Raisonnement logique et déduction.
-3. **Expression** : Analyse verbale et compréhension de texte.
-4. **Logique** : Résolution de problèmes logiques et spatiaux.
-5. **Matrices** : Compléter des suites logiques sous forme de matrices.
-6. **Compréhension** : Lecture et interprétation de passages complexes.
+1. **Calcul** : Proposer des problèmes mathématiques avancés, incluant des résolutions avec des tactiques claires telles que les identités remarquables, les produits en croix, ou les séries d'opérations.
+2. **Conditions minimales** : Créer des énigmes de raisonnement logique nécessitant une analyse approfondie des conditions d'un problème.
+3. **Expression** : Tester la compréhension du langage par l’analyse de textes complexes et des questions de synonymie, antonymie ou compréhension.
+4. **Logique** : Concevoir des questions combinatoires, sur des suites logiques ou des arrangements spécifiques.
+5. **Matrices** : Proposer des matrices à compléter, incluant des variations de modèles complexes.
+6. **Compréhension** : Formuler des passages exigeants suivis de questions sur les inférences ou la synthèse.
 
 Questions basées sur des annales Tage Mage : Proposer des questions tirées ou inspirées directement d'anciens tests Tage Mage pour offrir une expérience de préparation plus réaliste.
+
+---
+
 ### **Détails de conception et fonctionnalités attendues :**
 
-1. **Structure du formulaire :**
-   - Inclure **50 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
+1. **Instructions pour les questions :**
+   **Difficulté équilibrée :**
+      - Intégrer un mélange de questions **intermédiaires**, **difficiles** et **très difficiles**, avec des annotations pour guider l’utilisateur sur leur complexité.
+   **Authenticité et pertinence :**
+      - Reproduire des formats et des mécanismes identiques aux tests officiels, par exemple des séries, des systèmes d’équations, ou des analyses combinatoires.
+   **Réponses et corrections détaillées :**
+      - Fournir 3 à 5 options de réponses avec une seule correcte.
+      - Inclure une explication claire de la bonne réponse dans le code, masquée avant la soumission. 
+
+2. **Structure du formulaire :**
+   - Inclure **50 questions numérotées**, questions réparties en 6 catégories principales, comme décrit
    - Chaque question doit afficher son **catégorie** en en-tête, suivie de l’énoncé.
    - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
-   - Les réponses correctes doivent être masquées dans le code source.
-   - Important : Toutes les questions doivent être représentées de manière claire et complète, sans éléments manquants ou ambigus.
-   - Pour la catégorie "Questions basées sur des annales", insérer des références aux années ou numéros des tests d'origine lorsque cela est possible.
-
-2. **Progression et interactivité :**
-   - Les questions doivent varier en difficulté : **intermédiaire**, **difficile**.
-   - Le formulaire doit inclure une vérification à la soumission pour s’assurer que toutes les questions ont été répondues avant le calcul du score.
+   - Les explications des réponses correctes doivent être présentes dans le code source, mais masquées initialement.
+   - Toutes les questions doivent être complètes, claires, sans éléments ambigus ni manquants.
+   - Pour les questions basées sur les annales Tage Mage, inclure une référence à la source (année, numéro de test, etc.).
 
 3. **Affichage des résultats :**
    - À la soumission, le formulaire :
-     - Calcule et affiche le **score final**.
+     - Calculer et afficher le **score final**. (Chaque question vaut 1 point).
      - Liste les **questions incorrectes** avec :
        - La réponse choisie par l’utilisateur.
        - La **bonne réponse**.
-     - Permet une révision claire pour que l'utilisateur identifie ses erreurs.
-     - Les réponses données par l'utilisateur apparaissent en rouge si elles sont incorrectes, et en vert si elles sont correctes.
-     - Toutes les réponses restent cachées jusqu’à ce que l’utilisateur ait terminé le test et soumis ses réponses.
-     - Permet une révision claire pour que l'utilisateur identifie ses erreurs.
+       - Une explication **détaillée** de la bonne réponse.
+     - Les réponses incorrectes de l’utilisateur apparaissent en rouge, les réponses correctes en vert.
+     - Les corrections et explications s’affichent automatiquement sous chaque question incorrecte après la validation.
+     - Les réponses restent cachées jusqu’à la fin du test, pour ne pas biaiser l’utilisateur.
 
 4. **Direction artistique (UI/UX) :**
    - **Minimalisme et clarté** :
@@ -55,7 +63,11 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
      - Valider le formulaire.
      - Calculer dynamiquement les scores.
      - Afficher les résultats et les corrections **sans rechargement de page**.
-   - Permettre l’exportation des résultats et des corrections en **PDF**.
+   - Chronomètre  :
+     - Le chronomètre démarre dès le début du test et s’arrête à la soumission.
+     - Le temps final doit être inclus dans les résultats et figurer dans l’export PDF.
+   - Exportation PDF :
+     - Permettre l’exportation du score, des corrections, et du temps final en PDF.
 
 6. **Accessibilité :**
    - Veiller à ce que le formulaire soit accessible :
@@ -67,17 +79,17 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
    - Condenser tout le code dans un même fichier (HTML, CSS, JavaScript).
 
 8. **Extension suggérée :**
-   - Ajouter une **fonctionnalité de chronomètre**, permettant aux utilisateurs de gérer leur temps, comme lors d’un test réel.
-   - Inclure un **bouton de réinitialisation** pour permettre aux utilisateurs de refaire le test.
+   - Bouton de réinitialisation pour refaire le test, réinitialisant le score, les réponses, le chronomètre et les corrections.
 
+---
 
 ### **Clause obligatoire :**
-L'intelligence artificielle doit fournir une réponse complète et inclure les 50 questions comme spécifié.Aucune question ou élément de conception ne doit être omis. Les réponses doivent être intégralement fournies pour respecter les spécifications du projet.
+   - L'intelligence artificielle doit fournir une réponse complète et inclure les 50 questions spécifiées. Aucune question ni élément de conception ne doit être omis. Toutes les réponses correctes doivent être pleinement fournies pour respecter les spécifications du projet.
 
 ---
 
 ### **Livrable attendu :**
-Un formulaire interactif et élégant, conçu pour offrir une expérience utilisateur optimale tout en restant conforme aux standards du Tage Mage.La catégorie "Questions basées sur des annales Tage Mage" doit fournir une expérience fidèle aux conditions des tests historiques.]
+Un formulaire interactif, élégant et conforme aux standards du Tage Mage, offrant une expérience utilisateur optimale. La catégorie "Questions basées sur des annales Tage Mage" doit reproduire le plus fidèlement possible les conditions des tests historiques, avec corrections et scoring automatisés, chronomètre, et export PDF final.
 
 Voici un exemple de formulaire HTML interactif pour le TageMage les question ne sont pas inclus :
 
@@ -87,259 +99,254 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Test Tage Mage - Formulaire interactif</title>
+<title>Test de Préparation au Tage Mage</title>
 <style>
-    body {
-        margin: 0;
-        padding: 0;
-        background-color: #313338;
-        color: #FFFFFF;
-        font-family: Roboto, Helvetica, Arial, sans-serif;
-        font-size: 16px;
-        line-height: 1.5;
-    }
+  body {
+    font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+    background-color: #313338;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+  }
 
-    header, footer {
-        padding: 1rem;
-        text-align: center;
-    }
+  h1, h2, h3 {
+    color: #FFCB25;
+  }
 
-    main {
-        max-width: 800px;
-        margin: 2rem auto;
-        padding: 1rem;
-    }
+  h1 {
+    text-align: center;
+    padding: 20px 0;
+  }
 
-    h1, h2, h3 {
-        font-weight: normal;
-        margin-bottom: 1rem;
-        text-align: center;
-    }
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+  }
 
-    .question-block {
-        background-color: #44454A;
-        padding: 1rem;
-        margin-bottom: 1.5rem;
-        border-radius: 5px;
-    }
+  .instructions {
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
 
-    .question-category {
-        color: #FFCB25;
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-    }
+  .question-block {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #3B3D42;
+    border-radius: 5px;
+  }
 
-    .options label {
-        display: block;
-        margin-bottom: 0.5rem;
-        cursor: pointer;
-    }
+  .question-block h2 {
+    margin-top: 0;
+  }
 
-    .options input[type="radio"] {
-        margin-right: 0.5rem;
-        transform: scale(1.2);
-        vertical-align: middle;
-    }
+  .question-block p {
+    margin: 10px 0;
+  }
 
-    .submit-block, .result-block, .control-block {
-        text-align: center;
-        margin-top: 2rem;
-    }
+  .options label {
+    display: block;
+    padding: 5px 0;
+    cursor: pointer;
+  }
 
-    button {
-        background-color: #FFCB25;
-        color: #313338;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        border-radius: 5px;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-    }
+  .options input[type="radio"] {
+    margin-right: 10px;
+  }
 
-    button:hover {
-        background-color: #e6b71f;
-    }
+  .submit-btn, .reset-btn, .pdf-btn {
+    background-color: #FFCB25;
+    color: #313338;
+    border: none;
+    padding: 10px 20px;
+    margin: 20px 10px 0 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
 
-    .timer {
-        text-align: center;
-        margin: 1rem 0;
-        font-size: 1.2rem;
-    }
+  .submit-btn:hover, .reset-btn:hover, .pdf-btn:hover {
+    background-color: #f5be20;
+  }
 
-    .hidden {
-        display: none;
-    }
+  .result-block {
+    margin-top: 40px;
+    background: #3B3D42;
+    padding: 20px;
+    border-radius: 5px;
+  }
 
-    .correct-answer {
-        color: green;
-        font-weight: bold;
-    }
+  .incorrect {
+    color: #FF5252;
+  }
 
-    .incorrect-answer {
-        color: red;
-        font-weight: bold;
-    }
+  .correct {
+    color: #4CAF50;
+  }
 
-    .answer-review {
-        margin-top: 1rem;
-        padding: 0.5rem;
-        background: #3A3C40;
-        border-radius: 5px;
-    }
+  .explanation {
+    margin-top: 10px;
+    padding: 10px;
+    background: #2D2F33;
+    border-radius: 5px;
+  }
 
-    /* Responsive adjustments */
-    @media (max-width: 600px) {
-        main {
-            padding: 0.5rem;
-        }
+  .explanation strong {
+    color: #FFCB25;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  /* Responsive */
+  @media screen and (max-width: 600px) {
+    .submit-btn, .reset-btn, .pdf-btn {
+      width: 100%;
+      margin-bottom: 10px;
     }
+  }
 </style>
 </head>
 <body>
-<header>
-    <h1>Test Tage Mage - Entraînement</h1>
-    <p>Répondez à toutes les questions puis validez pour voir votre score et vos corrections.</p>
-</header>
-<main>
-    <div class="timer">
-        Temps restant : <span id="time-remaining">30:00</span>
-    </div>
-    <form id="tage-mage-form">
-        <!-- Question -->
 
-        <div class="submit-block">
-            <button type="button" id="submit-btn">Valider</button>
-        </div>
+<h1>Test de Préparation au Tage Mage</h1>
+<div class="container">
+  <div class="instructions">
+    <p>Bienvenue sur ce test de préparation au Tage Mage. Vous trouverez 50 questions réparties en 6 catégories : Calcul, Conditions minimales, Expression, Logique, Matrices, et Compréhension. Le niveau de difficulté varie (intermédiaire, difficile, très difficile). Les questions sont inspirées des annales officielles du Tage Mage. Prenez le temps de lire les énoncés et sélectionnez la bonne réponse. Un chronomètre démarre dès le début du test. À la fin, vous pourrez soumettre vos réponses, consulter vos corrections détaillées, votre score, votre temps écoulé et exporter le résultat en PDF.</p>
+    <p>Bon courage !</p>
+  </div>
 
-        <div class="control-block">
-            <button type="button" id="reset-btn">Réinitialiser</button>
-            <button type="button" id="export-btn" class="hidden">Exporter les résultats</button>
-        </div>
-    </form>
+  <form id="testForm">
+    
+    <!-- ========================================= -->
+    <!--                CALCUL (9 questions)       -->
+    <!-- ========================================= -->
 
-    <div id="result-section" class="result-block hidden">
-        <h2>Résultats</h2>
-        <p>Score : <span id="score"></span>/50</p>
-        <div id="review-section"></div>
-    </div>
-</main>
-<footer>
-    <p>&copy; Préparation Tage Mage</p>
-</footer>
+    <!-- ========================================= -->
+    <!--          CONDITIONS MINIMALES (8 q)       -->
+    <!-- ========================================= -->
+
+    <!-- ========================================= -->
+    <!--               EXPRESSION (8 q)            -->
+    <!-- ========================================= -->
+
+    <!-- ========================================= -->
+    <!--               LOGIQUE (8 q)               -->
+    <!-- ========================================= -->
+
+    <!-- ========================================= -->
+    <!--               MATRICES (8 q)              -->
+    <!-- ========================================= -->
+
+    <!-- ========================================= -->
+    <!--            COMPRÉHENSION (9 q)            -->
+    <!-- ========================================= -->
+
+  </form>
+</div>
+
 <script>
-    // --------------------------------------
-    // Timer
-    // --------------------------------------
-    var totalTime = 1800; // 30 minutes in seconds
-    var timerInterval = setInterval(function() {
-        totalTime--;
-        if(totalTime <= 0) {
-            clearInterval(timerInterval);
-            document.getElementById('time-remaining').textContent = "00:00";
-            // Time is up, submit automatically
-            submitForm();
-        } else {
-            var minutes = Math.floor(totalTime / 60);
-            var seconds = totalTime % 60;
-            if(seconds < 10) seconds = "0" + seconds;
-            document.getElementById('time-remaining').textContent = minutes + ":" + seconds;
-        }
-    }, 0);
+  // Start timer
+  let startTime = Date.now();
+  let timerInterval = setInterval(() => {
+    let elapsedSeconds = Math.floor((Date.now()-startTime)/1000);
+  },1000);
 
-    // --------------------------------------
-    // Form validation, scoring and display
-    // --------------------------------------
-    const form = document.getElementById('tage-mage-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const resultSection = document.getElementById('result-section');
-    const scoreSpan = document.getElementById('score');
-    const reviewSection = document.getElementById('review-section');
-    const exportBtn = document.getElementById('export-btn');
-    const resetBtn = document.getElementById('reset-btn');
+  // Correct answers (index-based per question)
+  // We'll store correct options as the value index chosen:
+  // For questions with confusion, we pick the chosen "correct" as per explanations.
+  // Q1 confusion: we choose "2" for demonstration
+  const correctAnswers = {
+    q1: "2",  q2: "1",  q3: "3",  q4: "4",  q5: "2",  q6: "1",  q7: "1",  q8: "2",  q9: "1",
+    q10:"3", q11:"2", q12:"2", q13:"3", q14:"2", q15:"1", q16:"2", q17:"1",
+    q18:"2", q19:"2", q20:"1", q21:"2", q22:"1", q23:"1", q24:"1", q25:"2",
+    q26:"2", q27:"1", q28:"2", q29:"1", q30:"1", q31:"2", q32:"2", q33:"1",
+    q34:"1", q35:"2", q36:"1", q37:"1", q38:"1", q39:"1", q40:"2", q41:"2",
+    q42:"2", q43:"2", q44:"2", q45:"2", q46:"2", q47:"2", q48:"2", q49:"2", q50:"2"
+  };
 
-    function submitForm() {
-        // Check if all questions are answered
-        const questionNames = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50"];
-        for (let q of questionNames) {
-            if(!form.querySelector('input[name="'+q+'"]:checked')) {
-                alert("Veuillez répondre à toutes les questions avant de valider.");
-                return;
-            }
-        }
+  function submitTest() {
+    clearInterval(timerInterval);
+    const form = document.getElementById('testForm');
+    const resultBlock = document.getElementById('resultBlock');
+    const correctionsDiv = document.getElementById('corrections');
+    correctionsDiv.innerHTML = '';
+    let score=0;
 
-        // Stop the timer
-        clearInterval(timerInterval);
+    // Calculate elapsed time
+    let endTime=Date.now();
+    let elapsedSeconds=Math.floor((endTime - startTime)/1000);
+    document.getElementById('elapsedTime').textContent=elapsedSeconds;
 
-        // Calculate score
-        let score = 0;
-        reviewSection.innerHTML = '';
-        questionNames.forEach((qName, index) => {
-            const selected = form.querySelector('input[name="'+qName+'"]:checked');
-            const isCorrect = selected.dataset.correct === "true";
-            if(isCorrect) score++;
+    // Get all question-blocks
+    const questionBlocks = document.querySelectorAll('.question-block');
+    questionBlocks.forEach((block)=>{
+      let qNum = block.getAttribute('data-question');
+      let radios = block.querySelectorAll('input[type="radio"]');
+      let qName = 'q'+qNum;
+      let userAnswer=null;
+      radios.forEach(r=>{
+        if(r.checked) userAnswer=r.value;
+      });
 
-            // Show review
-            const questionBlock = form.querySelectorAll('.question-block')[index];
-            const questionText = questionBlock.querySelector('.question-text').textContent.trim();
-            const allOptions = questionBlock.querySelectorAll('input[name="'+qName+'"]');
-            let correctAnswer;
-            allOptions.forEach(opt => {
-                if(opt.dataset.correct==="true") correctAnswer = opt.value;
-            });
-
-            let userAnswerClass = isCorrect ? 'correct-answer' : 'incorrect-answer';
-
-            const reviewItem = document.createElement('div');
-            reviewItem.classList.add('answer-review');
-            reviewItem.innerHTML = `
-                <p><strong>Question ${index+1} :</strong> ${questionText}</p>
-                <p>Votre réponse : <span class="${userAnswerClass}">${selected.value}</span></p>
-                <p>Bonne réponse : <span class="correct-answer">${correctAnswer}</span></p>
-            `;
-            reviewSection.appendChild(reviewItem);
+      let correct= correctAnswers[qName];
+      if(userAnswer===correct) {
+        score++;
+        // Mark correct if needed
+        // We show no explanation if correct
+      } else {
+        // Incorrect, show explanation and highlight
+        let chosenLabel = null;
+        let correctLabel = null;
+        radios.forEach(r=>{
+          if(r.value===userAnswer) chosenLabel=r.parentNode.innerText.trim();
+          if(r.value===correct) correctLabel=r.parentNode.innerText.trim();
         });
+        
+        // Show explanation
+        let explanation = block.querySelector('.explanation');
+        if(explanation) {
+          explanation.classList.remove('hidden');
+        }
 
-        scoreSpan.textContent = score;
-        resultSection.classList.remove('hidden');
+        // Add correction details:
+        let category=block.getAttribute('data-category');
+        let correctionHTML = `
+          <div style="margin-top:20px;">
+            <h3 class="incorrect">Question ${qNum} (${category})</h3>
+            <p><strong>Votre réponse :</strong> <span class="incorrect">${chosenLabel ? chosenLabel : "Non répondue"}</span></p>
+            <p><strong>Bonne réponse :</strong> <span class="correct">${correctLabel}</span></p>
+            <div class="explanation">${explanation ? explanation.innerHTML : ''}</div>
+          </div>
+        `;
+        correctionsDiv.insertAdjacentHTML('beforeend', correctionHTML);
+      }
+    });
 
-        // Disable all inputs
-        const inputs = form.querySelectorAll('input[type="radio"]');
-        inputs.forEach(inp => inp.disabled = true);
+    document.getElementById('score').textContent = score;
+    resultBlock.classList.remove('hidden');
+  }
 
-        // Show export button
-        exportBtn.classList.remove('hidden');
-    }
-
-    submitBtn.addEventListener('click', submitForm);
-
+  function resetTest() {
     // Reset form
-    resetBtn.addEventListener('click', function() {
-        // Reload page to reset timer and form
-        location.reload();
+    const form=document.getElementById('testForm');
+    form.reset();
+    // Hide explanations
+    const explanations=document.querySelectorAll('.explanation');
+    explanations.forEach(e=>{
+      e.classList.add('hidden');
     });
+    // Hide results
+    document.getElementById('resultBlock').classList.add('hidden');
+    document.getElementById('corrections').innerHTML='';
+    // Reset timer
+    startTime=Date.now();
+    timerInterval=setInterval(()=>{
+      let elapsedSeconds=Math.floor((Date.now()-startTime)/1000);
+    },1000);
+  }
 
-    // Export results
-    exportBtn.addEventListener('click', function(){
-        let textContent = "Résultats du test Tage Mage\n\n";
-        textContent += "Score: " + scoreSpan.textContent + "/50\n\n";
-        const reviews = reviewSection.querySelectorAll('.answer-review');
-        reviews.forEach((rev, i) => {
-            const question = rev.querySelector('strong').textContent;
-            const userAns = rev.querySelectorAll('p')[1].textContent;
-            const correctAns = rev.querySelectorAll('p')[2].textContent;
-            textContent += question + "\n" + userAns + "\n" + correctAns + "\n\n";
-        });
-
-        const blob = new Blob([textContent], {type: 'text/plain'});
-        const link = document.createElement('a');
-        link.href = URL.createObjectURL(blob);
-        link.download = "resultats_tage_mage.txt";
-        link.click();
-    });
 </script>
 </body>
 </html>
 ```
-
-
