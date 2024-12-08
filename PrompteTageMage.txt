@@ -13,7 +13,7 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
 ### **Détails de conception et fonctionnalités attendues :**
 
 1. **Structure du formulaire :**
-   - Inclure **10 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
+   - Inclure **100 questions numérotées**, organisées de manière équilibrée selon les catégories ci-dessus.
    - Chaque question doit afficher son **catégorie** en en-tête, suivie de l’énoncé.
    - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
    - Les réponses correctes doivent être masquées dans le code source.
@@ -55,7 +55,7 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
      - Valider le formulaire.
      - Calculer dynamiquement les scores.
      - Afficher les résultats et les corrections **sans rechargement de page**.
-   - Permettre l’exportation des résultats et des corrections en **fichier texte** ou **PDF**.
+   - Permettre l’exportation des résultats et des corrections en **PDF**.
 
 6. **Accessibilité :**
    - Veiller à ce que le formulaire soit accessible :
@@ -74,5 +74,268 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
 
 ### **Livrable attendu :**
 Un formulaire interactif et élégant, conçu pour offrir une expérience utilisateur optimale tout en restant conforme aux standards du Tage Mage.La catégorie "Questions basées sur des annales Tage Mage" doit fournir une expérience fidèle aux conditions des tests historiques.]
+
+Voici un exemple de formulaire HTML interactif pour le TageMage les question ne sont pas inclus :
+
+```html,css,js
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Test Tage Mage - Formulaire interactif</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background-color: #313338;
+        color: #FFFFFF;
+        font-family: Roboto, Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    header, footer {
+        padding: 1rem;
+        text-align: center;
+    }
+
+    main {
+        max-width: 800px;
+        margin: 2rem auto;
+        padding: 1rem;
+    }
+
+    h1, h2, h3 {
+        font-weight: normal;
+        margin-bottom: 1rem;
+        text-align: center;
+    }
+
+    .question-block {
+        background-color: #44454A;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+        border-radius: 5px;
+    }
+
+    .question-category {
+        color: #FFCB25;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+    }
+
+    .options label {
+        display: block;
+        margin-bottom: 0.5rem;
+        cursor: pointer;
+    }
+
+    .options input[type="radio"] {
+        margin-right: 0.5rem;
+        transform: scale(1.2);
+        vertical-align: middle;
+    }
+
+    .submit-block, .result-block, .control-block {
+        text-align: center;
+        margin-top: 2rem;
+    }
+
+    button {
+        background-color: #FFCB25;
+        color: #313338;
+        border: none;
+        padding: 0.75rem 1.5rem;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #e6b71f;
+    }
+
+    .timer {
+        text-align: center;
+        margin: 1rem 0;
+        font-size: 1.2rem;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .correct-answer {
+        color: green;
+        font-weight: bold;
+    }
+
+    .incorrect-answer {
+        color: red;
+        font-weight: bold;
+    }
+
+    .answer-review {
+        margin-top: 1rem;
+        padding: 0.5rem;
+        background: #3A3C40;
+        border-radius: 5px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 600px) {
+        main {
+            padding: 0.5rem;
+        }
+    }
+</style>
+</head>
+<body>
+<header>
+    <h1>Test Tage Mage - Entraînement</h1>
+    <p>Répondez à toutes les questions puis validez pour voir votre score et vos corrections.</p>
+</header>
+<main>
+    <div class="timer">
+        Temps restant : <span id="time-remaining">30:00</span>
+    </div>
+    <form id="tage-mage-form">
+        <!-- Question -->
+
+        <div class="submit-block">
+            <button type="button" id="submit-btn">Valider</button>
+        </div>
+
+        <div class="control-block">
+            <button type="button" id="reset-btn">Réinitialiser</button>
+            <button type="button" id="export-btn" class="hidden">Exporter les résultats</button>
+        </div>
+    </form>
+
+    <div id="result-section" class="result-block hidden">
+        <h2>Résultats</h2>
+        <p>Score : <span id="score"></span>/100</p>
+        <div id="review-section"></div>
+    </div>
+</main>
+<footer>
+    <p>&copy; Préparation Tage Mage</p>
+</footer>
+<script>
+    // --------------------------------------
+    // Timer
+    // --------------------------------------
+    var totalTime = 1800; // 30 minutes in seconds
+    var timerInterval = setInterval(function() {
+        totalTime--;
+        if(totalTime <= 0) {
+            clearInterval(timerInterval);
+            document.getElementById('time-remaining').textContent = "00:00";
+            // Time is up, submit automatically
+            submitForm();
+        } else {
+            var minutes = Math.floor(totalTime / 60);
+            var seconds = totalTime % 60;
+            if(seconds < 10) seconds = "0" + seconds;
+            document.getElementById('time-remaining').textContent = minutes + ":" + seconds;
+        }
+    }, 1000);
+
+    // --------------------------------------
+    // Form validation, scoring and display
+    // --------------------------------------
+    const form = document.getElementById('tage-mage-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const resultSection = document.getElementById('result-section');
+    const scoreSpan = document.getElementById('score');
+    const reviewSection = document.getElementById('review-section');
+    const exportBtn = document.getElementById('export-btn');
+    const resetBtn = document.getElementById('reset-btn');
+
+    function submitForm() {
+        // Check if all questions are answered
+        const questionNames = ["q1","q2","q3","q4","q5","q6","q7","q8","q9","q10","q11","q12","q13","q14","q15","q16","q17","q18","q19","q20","q21","q22","q23","q24","q25","q26","q27","q28","q29","q30","q31","q32","q33","q34","q35","q36","q37","q38","q39","q40","q41","q42","q43","q44","q45","q46","q47","q48","q49","q50","q51","q52","q53","q54","q55","q56","q57","q58","q59","q60","q61","q62","q63","q64","q65","q66","q67","q68","q69","q70","q71","q72","q73","q74","q75","q76","q77","q78","q79","q80","q81","q82","q83","q84","q85","q86","q87","q88","q89","q90","q91","q92","q93","q94","q95","q96","q97","q98","q99","q100"];
+        for (let q of questionNames) {
+            if(!form.querySelector('input[name="'+q+'"]:checked')) {
+                alert("Veuillez répondre à toutes les questions avant de valider.");
+                return;
+            }
+        }
+
+        // Stop the timer
+        clearInterval(timerInterval);
+
+        // Calculate score
+        let score = 0;
+        reviewSection.innerHTML = '';
+        questionNames.forEach((qName, index) => {
+            const selected = form.querySelector('input[name="'+qName+'"]:checked');
+            const isCorrect = selected.dataset.correct === "true";
+            if(isCorrect) score++;
+
+            // Show review
+            const questionBlock = form.querySelectorAll('.question-block')[index];
+            const questionText = questionBlock.querySelector('.question-text').textContent.trim();
+            const allOptions = questionBlock.querySelectorAll('input[name="'+qName+'"]');
+            let correctAnswer;
+            allOptions.forEach(opt => {
+                if(opt.dataset.correct==="true") correctAnswer = opt.value;
+            });
+
+            let userAnswerClass = isCorrect ? 'correct-answer' : 'incorrect-answer';
+
+            const reviewItem = document.createElement('div');
+            reviewItem.classList.add('answer-review');
+            reviewItem.innerHTML = `
+                <p><strong>Question ${index+1} :</strong> ${questionText}</p>
+                <p>Votre réponse : <span class="${userAnswerClass}">${selected.value}</span></p>
+                <p>Bonne réponse : <span class="correct-answer">${correctAnswer}</span></p>
+            `;
+            reviewSection.appendChild(reviewItem);
+        });
+
+        scoreSpan.textContent = score;
+        resultSection.classList.remove('hidden');
+
+        // Disable all inputs
+        const inputs = form.querySelectorAll('input[type="radio"]');
+        inputs.forEach(inp => inp.disabled = true);
+
+        // Show export button
+        exportBtn.classList.remove('hidden');
+    }
+
+    submitBtn.addEventListener('click', submitForm);
+
+    // Reset form
+    resetBtn.addEventListener('click', function() {
+        // Reload page to reset timer and form
+        location.reload();
+    });
+
+    // Export results
+    exportBtn.addEventListener('click', function(){
+        let textContent = "Résultats du test Tage Mage\n\n";
+        textContent += "Score: " + scoreSpan.textContent + "/100\n\n";
+        const reviews = reviewSection.querySelectorAll('.answer-review');
+        reviews.forEach((rev, i) => {
+            const question = rev.querySelector('strong').textContent;
+            const userAns = rev.querySelectorAll('p')[1].textContent;
+            const correctAns = rev.querySelectorAll('p')[2].textContent;
+            textContent += question + "\n" + userAns + "\n" + correctAns + "\n\n";
+        });
+
+        const blob = new Blob([textContent], {type: 'text/plain'});
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = "resultats_tage_mage.txt";
+        link.click();
+    });
+</script>
+</body>
+</html>
+```
 
 
