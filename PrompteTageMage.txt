@@ -31,6 +31,9 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
        - La réponse choisie par l’utilisateur.
        - La **bonne réponse**.
      - Permet une révision claire pour que l'utilisateur identifie ses erreurs.
+     - Les réponses données par l'utilisateur apparaissent en rouge si elles sont incorrectes, et en vert si elles sont correctes.
+     - Toutes les réponses restent cachées jusqu’à ce que l’utilisateur ait terminé le test et soumis ses réponses.
+     - Permet une révision claire pour que l'utilisateur identifie ses erreurs.
 
 4. **Direction artistique (UI/UX) :**
    - **Minimalisme et clarté** :
@@ -61,7 +64,7 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
    - Assurer une navigation fluide avec le clavier.
 
 7. **Code modulaire et réutilisable :
-   - Condence tout les code dans un même fichier que ce soit le javascript le css ou le html.
+   - Condenser tout le code dans un même fichier (HTML, CSS, JavaScript).
 
 8. **Extension suggérée :**
    - Ajouter une **fonctionnalité de chronomètre**, permettant aux utilisateurs de gérer leur temps, comme lors d’un test réel.
