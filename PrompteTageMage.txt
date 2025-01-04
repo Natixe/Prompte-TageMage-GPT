@@ -1,38 +1,92 @@
-### **Création d'un formulaire HTML interactif pour le Tage Mage avec correction détaillée et design minimaliste**
+**Contexte et objectif :**
 
-Vous êtes un expert en préparation au Tage Mage, un test d’admission aux écoles de commerce. Votre mission est de concevoir un formulaire HTML interactif, complet et attrayant, pour évaluer les compétences des candidats dans les six catégories principales du Tage Mage :
+Tu es un expert en préparation au Tage Mage, le test d’admission aux écoles de commerce. 
 
-1. **Calcul** : Proposer des problèmes mathématiques avancés, incluant des résolutions avec des tactiques claires telles que les identités remarquables, les produits en croix, ou les séries d'opérations.
-2. **Conditions minimales** : Créer des énigmes de raisonnement logique nécessitant une analyse approfondie des conditions d'un problème.
-3. **Expression** : Tester la compréhension du langage par l’analyse de textes complexes et des questions de synonymie, antonymie ou compréhension.
-4. **Logique** : Concevoir des questions combinatoires, sur des suites logiques ou des arrangements spécifiques.
-5. **Matrices** : Proposer des matrices à compléter, incluant des variations de modèles complexes.
-6. **Compréhension** : Formuler des passages exigeants suivis de questions sur les inférences ou la synthèse.
+Ta mission est de concevoir un test blanc complet de 60 question, interactif dans un formulaire HTML unique (incluant HTML, CSS et JavaScript) afin de permettre aux candidats de s’entraîner dans des conditions proches de l’examen officiel du TageMage.
 
-Questions basées sur des annales Tage Mage : Proposer des questions tirées ou inspirées directement d'anciens tests Tage Mage pour offrir une expérience de préparation plus réaliste.
+Caractéristiques principales :
+
+  1. Un seul fichier (HTML, CSS et JS combinés).
+  2. Design minimaliste, responsive, et ergonomique (adapté mobiles / tablettes / PC).
+  3. Clarté, facilité d’utilisation et fiabilité.
+
+
+### **Catégories à inclure (6 au total) :**
+
+1. **Compréhension de texte**  
+   - Énoncés de textes exigeants, suivis de questions d’inférences ou de synthèse.  
+   - Questions locales (analyse d’un paragraphe ou d’une phrase précise).
+   - Questions globales (analyse portant sur l’intégralité du texte).
+   - Chaque question doit être accompagnée du texte complet (ou d’un extrait cohérent, intégral et autonome) nécessaire pour répondre.
+   - Aucune référence externe ou texte incomplet ne doit être fourni : tout le texte utile à la question doit être directement inclus.
+
+2. **Expression**  
+   - Analyse de textes complexes avec questions de synonymie, antonymie, correction linguistique et cohérence.  
+   - Exemples de sous-compétences à évaluer :  
+     - **Synonymie** : trouver la meilleure reformulation d’un passage.  
+     - **Correction linguistique** : repérage des fautes d’orthographe, évaluation de la grammaire et du style.  
+     - **Cohérence** : construction de phrases complexes, maniement des adverbes/conjonctions, organisation logique.
+
+3. **Calcul**  
+   - Problèmes mathématiques d’arithmétique, de géométrie et d’algèbre, de niveau collège.  
+   - Utilisation d’identités remarquables, de produits en croix ou de mises en équations.  
+   - Évaluer la capacité à modéliser un problème en langage mathématique et à le résoudre.
+
+4. **Conditions minimales**  
+   - Énigmes de raisonnement logique, requérant une analyse approfondie de conditions à respecter pour résoudre un problème.
+
+5. **Raisonnement et argumentation**  
+   - Questions inspirées de situations de la vie quotidienne ou de médias.  
+   - Nécessite un raisonnement naturel : logique et jugement.  
+   - Peut inclure des questions combinatoires, d’arrangements spécifiques, de suites logiques, etc.
+
+6. **Logique**  
+   - Informations spatiales, numériques et alphabétiques.  
+   - Divisée en 3 sous-thèmes :  
+     1. **Logique numérique** (3 questions)  
+     2. **Logique alphabétique** (3 questions)  
+     3. **Logique graphique** (4 questions)  
+   - Vise à mesurer la rapidité de compréhension et d’analyse, la gestion du temps et la résistance au stress.
+
+> **Remarque :**  
+> Certaines questions peuvent s’appuyer sur des annales officielles du Tage Mage. Dans ce cas, inclure le texte complet dans le code, plutôt qu’une référence externe, afin que l’utilisateur puisse tout lire dans l’interface.
 
 ---
 
-### **Détails de conception et fonctionnalités attendues :**
+### **Détails de conception et fonctionnalités détaillées attendues :**
 
-1. **Instructions pour les questions :**
+1. **Structure et contenu du formulaire**  
+   - **60 questions** au total, **10 par catégorie** (pour les 6 catégories).  
+   - Chaque question doit comporter :  
+     - Un numéro (ex. Q1, Q2, etc.)  
+     - La mention de sa catégorie (Compréhension, Expression, etc).  
+     - Un énoncé clair et complet (sans ambiguïté).  
+     - **5 options de réponse** (A, B, C, D, E) dont **1 seule est correcte**.  
+   - Les réponses correctes doivent exister dans le code source mais rester **masquées** avant la validation.  
+   - Pour les éventuelles questions tirées d’annales, inclure directement dans l’énoncé le court extrait ou la référence — mais toujours fournir le texte complet pour permettre la compréhension de la question. (par ex. : « Tage Mage 2019, Test 3, Question 7 »).
+
+
+2. **Instructions pour les questions de difficulté et d’authenticité :**
    **Difficulté équilibrée :**
-      - Intégrer un mélange de questions **intermédiaires**, **difficiles** et **très difficiles**, avec des annotations pour guider l’utilisateur sur leur complexité.
-   **Authenticité et pertinence :**
-      - Reproduire des formats et des mécanismes identiques aux tests officiels, par exemple des séries, des systèmes d’équations, ou des analyses combinatoires.
-   **Réponses et corrections détaillées :**
-      - Fournir 3 à 5 options de réponses avec une seule correcte.
-      - Inclure une explication claire de la bonne réponse dans le code, masquée avant la soumission. 
+   - Proposer un mélange équilibré de questions **intermédiaires**, **difficiles** et **très difficiles**.  
+   - Respecter autant que possible les formats types du Tage Mage.
 
-2. **Structure du formulaire :**
-   - Inclure **50 questions numérotées**, questions réparties en 6 catégories principales, comme décrit
-   - Chaque question doit afficher son **catégorie** en en-tête, suivie de l’énoncé.
-   - Proposer **3 à 5 options de réponse** pour chaque question, avec une seule réponse correcte.
-   - Les explications des réponses correctes doivent être présentes dans le code source, mais masquées initialement.
-   - Toutes les questions doivent être complètes, claires, sans éléments ambigus ni manquants.
-   - Pour les questions basées sur les annales Tage Mage, inclure une référence à la source (année, numéro de test, etc.).
 
-3. **Affichage des résultats :**
+3. **Système de réponses et corrections**  
+   - Au clic sur le bouton de **soumission** :  
+     1. Calculer le score final en appliquant :
+        - +4 points par bonne réponse,
+        - -1 point par mauvaise réponse,
+        - (score sur 240 possible si on suit la logique « 60 questions × 4 points max »).
+     2. Afficher :  
+        - Les **questions incorrectes** avec :  
+          - La réponse choisie par l’utilisateur.  
+          - La **bonne réponse** en clair.  
+          - Une **explication détaillée** (raisonnement ou rappel théorique).  
+        - Les réponses correctes en vert, les réponses incorrectes en rouge.  
+   - Les explications doivent être disponibles dans le code, dévoilées seulement après soumission, question par question.
+
+4. **Affichage des résultats :**
    - À la soumission, le formulaire :
      - Calculer et afficher le **score final**. (Chaque question vaut 1 point).
      - Liste les **questions incorrectes** avec :
@@ -41,9 +95,9 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
        - Une explication **détaillée** de la bonne réponse.
      - Les réponses incorrectes de l’utilisateur apparaissent en rouge, les réponses correctes en vert.
      - Les corrections et explications s’affichent automatiquement sous chaque question incorrecte après la validation.
-     - Les réponses restent cachées jusqu’à la fin du test, pour ne pas biaiser l’utilisateur.
+     - Les réponses restent masquées jusqu’à la fin pour éviter tout biais pendant le test.
 
-4. **Direction artistique (UI/UX) :**
+5. **Direction artistique (UI/UX) :**
    - **Minimalisme et clarté** :
      - Les Question :  `#FFCB25`.
      - Fond : `#313338` (gris foncé).
@@ -57,39 +111,50 @@ Questions basées sur des annales Tage Mage : Proposer des questions tirées ou 
    - **Compatibilité mobile** :
      - Le design doit être **responsive**, adapté aux écrans d’ordinateurs, tablettes et smartphones.
 
-5. **Fonctionnalités techniques :**
+6. **Fonctionnalités techniques :**
    - Implémenter en **HTML**, **CSS** et **JavaScript**.
    - Ajouter une logique JavaScript pour :
      - Valider le formulaire.
      - Calculer dynamiquement les scores.
      - Afficher les résultats et les corrections **sans rechargement de page**.
    - Chronomètre  :
-     - Le chronomètre démarre dès le début du test et s’arrête à la soumission.
-     - Le temps final doit être inclus dans les résultats et figurer dans l’export PDF.
+     - Le chronomètre démarre dès l’ouverture du test,
+     - Le chronomètre s’arrête à la soumission du test,
+     - Afficher le temps final dans les résultats (et l’export PDF).
    - Exportation PDF :
-     - Permettre l’exportation du score, des corrections, et du temps final en PDF.
+     - Permettre l’export du score, des corrections et du temps final au format PDF.
 
-6. **Accessibilité :**
+7. **Accessibilité :**
    - Veiller à ce que le formulaire soit accessible :
      - Support pour les **lecteurs d’écran**.
      - Contraste suffisant entre le texte et le fond.
-   - Assurer une navigation fluide avec le clavier.
+   - Navigation fluide au clavier (tabulation, focus visible, etc.).
 
-7. **Code modulaire et réutilisable :
-   - Condenser tout le code dans un même fichier (HTML, CSS, JavaScript).
+8. **Code modulaire et réutilisable :
+   - Bien organiser le JavaScript (fonctions pour calculer les scores, gérer l’affichage, etc.).
+   - Rassembler la totalité (HTML/CSS/JS) dans un seul fichier tout en restant clair et commenté.
 
-8. **Extension suggérée :**
+9. **Clause obligatoire**  
+   - 60 questions fournies, avec réponses correctes et explications (en commentaires ou masquées). 
+   - Aucune fonctionnalité demandée ci-dessus ne doit être omise : catégories, structure, scoring, corrections, design, chronomètre, export PDF, etc.
+
+10. **Extension :**
    - Bouton de réinitialisation pour refaire le test, réinitialisant le score, les réponses, le chronomètre et les corrections.
 
 ---
 
-### **Clause obligatoire :**
-   - L'intelligence artificielle doit fournir une réponse complète et inclure les 50 questions spécifiées. Aucune question ni élément de conception ne doit être omis. Toutes les réponses correctes doivent être pleinement fournies pour respecter les spécifications du projet.
+### **Livrable attendu :**
+- Un **formulaire HTML unique**, intégrant les 60 questions contenant :  
+     - L’**intégralité du code** (HTML, CSS, JavaScript).  
+     - Les **60 questions** (10 par catégorie).  
+     - Tous les aspects (design, scripts, explications, etc.) inclus et fonctionnels.
+     - Les **réponses** et **explications** (commentées ou masquées) correspondant à chaque item.  
+     - Après soumission :  
+       - Affichage du **score final** (calculé)
+       - Mise en évidence (en rouge) des réponses erronées et (en vert) des bonnes,
+       - **Chronomètre final** et option d’export PDF.
 
 ---
-
-### **Livrable attendu :**
-Un formulaire interactif, élégant et conforme aux standards du Tage Mage, offrant une expérience utilisateur optimale. La catégorie "Questions basées sur des annales Tage Mage" doit reproduire le plus fidèlement possible les conditions des tests historiques, avec corrections et scoring automatisés, chronomètre, et export PDF final.
 
 Voici un exemple de formulaire HTML interactif pour le TageMage les question ne sont pas inclus :
 
@@ -212,7 +277,7 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
 <h1>Test de Préparation au Tage Mage</h1>
 <div class="container">
   <div class="instructions">
-    <p>Bienvenue sur ce test de préparation au Tage Mage. Vous trouverez 50 questions réparties en 6 catégories : Calcul, Conditions minimales, Expression, Logique, Matrices, et Compréhension. Le niveau de difficulté varie (intermédiaire, difficile, très difficile). Les questions sont inspirées des annales officielles du Tage Mage. Prenez le temps de lire les énoncés et sélectionnez la bonne réponse. Un chronomètre démarre dès le début du test. À la fin, vous pourrez soumettre vos réponses, consulter vos corrections détaillées, votre score, votre temps écoulé et exporter le résultat en PDF.</p>
+    <p>Bienvenue sur ce test de préparation au Tage Mage. Vous trouverez 60 questions réparties en 6 catégories : Calcul, Conditions minimales, Expression, Logique, Matrices, et Compréhension. Le niveau de difficulté varie (intermédiaire, difficile, très difficile). Les questions sont inspirées des annales officielles du Tage Mage. Prenez le temps de lire les énoncés et sélectionnez la bonne réponse. Un chronomètre démarre dès le début du test. À la fin, vous pourrez soumettre vos réponses, consulter vos corrections détaillées, votre score, votre temps écoulé et exporter le résultat en PDF.</p>
     <p>Bon courage !</p>
   </div>
 
@@ -257,12 +322,6 @@ Voici un exemple de formulaire HTML interactif pour le TageMage les question ne 
   // For questions with confusion, we pick the chosen "correct" as per explanations.
   // Q1 confusion: we choose "2" for demonstration
   const correctAnswers = {
-    q1: "2",  q2: "1",  q3: "3",  q4: "4",  q5: "2",  q6: "1",  q7: "1",  q8: "2",  q9: "1",
-    q10:"3", q11:"2", q12:"2", q13:"3", q14:"2", q15:"1", q16:"2", q17:"1",
-    q18:"2", q19:"2", q20:"1", q21:"2", q22:"1", q23:"1", q24:"1", q25:"2",
-    q26:"2", q27:"1", q28:"2", q29:"1", q30:"1", q31:"2", q32:"2", q33:"1",
-    q34:"1", q35:"2", q36:"1", q37:"1", q38:"1", q39:"1", q40:"2", q41:"2",
-    q42:"2", q43:"2", q44:"2", q45:"2", q46:"2", q47:"2", q48:"2", q49:"2", q50:"2"
   };
 
   function submitTest() {
