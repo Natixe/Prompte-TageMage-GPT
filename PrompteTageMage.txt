@@ -1,4 +1,4 @@
-**Contexte et objectif :**
+Raisonner **Contexte et objectif :**
 
 Tu es un expert en préparation au Tage Mage, le test d’admission aux écoles de commerce. 
 
@@ -10,14 +10,16 @@ Caractéristiques principales :
   2. Design minimaliste, responsive, et ergonomique (adapté mobiles / tablettes / PC).
   3. Clarté, facilité d’utilisation et fiabilité.
 
+---
 
 ### **Catégories à inclure (6 au total) :**
 
 1. **Compréhension de texte**  
+   - Chaque question doit être accompagnée du texte complet (ou d’un extrait cohérent, intégral et autonome) nécessaire pour répondre.
    - Énoncés de textes exigeants, suivis de questions d’inférences ou de synthèse.  
    - Questions locales (analyse d’un paragraphe ou d’une phrase précise).
    - Questions globales (analyse portant sur l’intégralité du texte).
-   - Chaque question doit être accompagnée du texte complet (ou d’un extrait cohérent, intégral et autonome) nécessaire pour répondre.
+   - Insérer des textes plus longs et plus pointus pour certaine question.
    - Aucune référence externe ou texte incomplet ne doit être fourni : tout le texte utile à la question doit être directement inclus.
 
 2. **Expression**  
@@ -45,7 +47,8 @@ Caractéristiques principales :
    - Divisée en 3 sous-thèmes :  
      1. **Logique numérique** (3 questions)  
      2. **Logique alphabétique** (3 questions)  
-     3. **Logique graphique** (4 questions)  
+     3. **Logique graphique** (4 questions)
+         Matrices : Compléter des suites logiques sous forme de matrices.
    - Vise à mesurer la rapidité de compréhension et d’analyse, la gestion du temps et la résistance au stress.
 
 > **Remarque :**  
@@ -55,7 +58,7 @@ Caractéristiques principales :
 
 ### **Détails de conception et fonctionnalités détaillées attendues :**
 
-1. **Structure et contenu du formulaire**  
+### 1. **Structure et contenu du formulaire**  
    - **60 questions** au total, **10 par catégorie** (pour les 6 catégories).  
    - Chaque question doit comporter :  
      - Un numéro (ex. Q1, Q2, etc.)  
@@ -65,39 +68,58 @@ Caractéristiques principales :
    - Les réponses correctes doivent exister dans le code source mais rester **masquées** avant la validation.  
    - Pour les éventuelles questions tirées d’annales, inclure directement dans l’énoncé le court extrait ou la référence — mais toujours fournir le texte complet pour permettre la compréhension de la question. (par ex. : « Tage Mage 2019, Test 3, Question 7 »).
 
+---
 
-2. **Instructions pour les questions de difficulté et d’authenticité :**
+### 2. **Instructions pour les questions de difficulté et d’authenticité :**
    **Difficulté équilibrée :**
    - Proposer un mélange équilibré de questions **intermédiaires**, **difficiles** et **très difficiles**.  
    - Respecter autant que possible les formats types du Tage Mage.
 
+---
 
-3. **Système de réponses et corrections**  
-   - Au clic sur le bouton de **soumission** :  
-     1. Calculer le score final en appliquant :
-        - +4 points par bonne réponse,
-        - -1 point par mauvaise réponse,
-        - (score sur 240 possible si on suit la logique « 60 questions × 4 points max »).
-     2. Afficher :  
-        - Les **questions incorrectes** avec :  
-          - La réponse choisie par l’utilisateur.  
-          - La **bonne réponse** en clair.  
-          - Une **explication détaillée** (raisonnement ou rappel théorique).  
-        - Les réponses correctes en vert, les réponses incorrectes en rouge.  
-   - Les explications doivent être disponibles dans le code, dévoilées seulement après soumission, question par question.
+### 3. **Vérification logique et cohérence**  
+  - Chaque question doit être **logiquement valide** :  
+    - **Une et une seule réponse correcte** par question.  
+    - Les affirmations et explications doivent être **cohérentes** et ne pas se contredire.  
+    - La bonne réponse doit découler **clairement** de l’énoncé et de la logique.  
+    - **Aucun** énoncé ne doit induire un paradoxe ou une absence de solution (éviter les énoncés impossibles à résoudre).  
+  - Les **explications** fournies après la validation doivent prouver la cohérence de la question et justifier clairement la solution correcte.
 
-4. **Affichage des résultats :**
-   - À la soumission, le formulaire :
-     - Calculer et afficher le **score final**. (Chaque question vaut 1 point).
-     - Liste les **questions incorrectes** avec :
-       - La réponse choisie par l’utilisateur.
-       - La **bonne réponse**.
-       - Une explication **détaillée** de la bonne réponse.
-     - Les réponses incorrectes de l’utilisateur apparaissent en rouge, les réponses correctes en vert.
-     - Les corrections et explications s’affichent automatiquement sous chaque question incorrecte après la validation.
-     - Les réponses restent masquées jusqu’à la fin pour éviter tout biais pendant le test.
+---
 
-5. **Direction artistique (UI/UX) :**
+### 4. Système de réponses et corrections
+  1. **Calcul du score**  
+     - **+4 points** pour chaque bonne réponse.  
+     - **0 point** pour chaque question non répondue.  
+     - **-1 point** pour chaque mauvaise réponse.  
+     - Score maximum : **240 points** (basé sur 60 questions × 4 points chacune).
+  
+  2. **Affichage des corrections**  
+     - Après la soumission, pour chaque question **incorrecte** :  
+       - Afficher la **réponse choisie** par l’utilisateur.  
+       - Afficher la **bonne réponse**.  
+       - Fournir une **explication détaillée** (raisonnement, rappel théorique, etc.).  
+     - Les réponses **correctes** doivent apparaître en **vert**, les réponses **incorrectes** en **rouge**.
+     - Les **explications** (pour toutes les questions) sont présentes dans le code, mais ne doivent être dévoilées qu’une fois la soumission effectuée.
+
+---
+
+### 5. Affichage des résultats
+  - Au moment de la **soumission du formulaire** :  
+    1. Calculer et afficher le **score final**.  
+    2. Lister les **questions incorrectes** avec :  
+       - La réponse choisie par l’utilisateur.  
+       - La **bonne réponse**.  
+       - Une **explication détaillée** (raisonnement, rappel théorique).  
+    3. Mettre en forme :  
+       - Les réponses **correctes** en vert.  
+       - Les réponses **incorrectes** en rouge.  
+    4. Les corrections et explications apparaissent **automatiquement sous chaque question incorrecte** après la validation.  
+    5. **Masquer toutes les réponses** jusqu’à la fin du test pour éviter tout biais pendant la passation.
+
+---
+
+### 6. **Direction artistique (UI/UX) :**
    - **Minimalisme et clarté** :
      - Les Question :  `#FFCB25`.
      - Fond : `#313338` (gris foncé).
@@ -111,7 +133,9 @@ Caractéristiques principales :
    - **Compatibilité mobile** :
      - Le design doit être **responsive**, adapté aux écrans d’ordinateurs, tablettes et smartphones.
 
-6. **Fonctionnalités techniques :**
+---
+
+### 7. **Fonctionnalités techniques :**
    - Implémenter en **HTML**, **CSS** et **JavaScript**.
    - Ajouter une logique JavaScript pour :
      - Valider le formulaire.
@@ -124,32 +148,44 @@ Caractéristiques principales :
    - Exportation PDF :
      - Permettre l’export du score, des corrections et du temps final au format PDF.
 
-7. **Accessibilité :**
+---
+
+### 8. **Accessibilité :**
    - Veiller à ce que le formulaire soit accessible :
      - Support pour les **lecteurs d’écran**.
      - Contraste suffisant entre le texte et le fond.
    - Navigation fluide au clavier (tabulation, focus visible, etc.).
 
-8. **Code modulaire et réutilisable :
+---
+
+### 9. **Code modulaire et réutilisable :
    - Bien organiser le JavaScript (fonctions pour calculer les scores, gérer l’affichage, etc.).
    - Rassembler la totalité (HTML/CSS/JS) dans un seul fichier tout en restant clair et commenté.
 
-9. **Clause obligatoire**  
+---
+
+### 10. **Clause obligatoire**  
    - 60 questions fournies, avec réponses correctes et explications (en commentaires ou masquées). 
    - Aucune fonctionnalité demandée ci-dessus ne doit être omise : catégories, structure, scoring, corrections, design, chronomètre, export PDF, etc.
 
-10. **Extension :**
+---
+
+###  11. **Extension :**
    - Bouton de réinitialisation pour refaire le test, réinitialisant le score, les réponses, le chronomètre et les corrections.
 
 ---
 
 ### **Livrable attendu :**
 - Un **formulaire HTML unique**, intégrant les 60 questions contenant :  
-     - L’**intégralité du code** (HTML, CSS, JavaScript).  
-     - Les **60 questions** (10 par catégorie).  
-     - Tous les aspects (design, scripts, explications, etc.) inclus et fonctionnels.
-     - Les **réponses** et **explications** (commentées ou masquées) correspondant à chaque item.  
-     - Après soumission :  
+     1. L’**intégralité du code** (HTML, CSS, JavaScript).  
+     2. Les **60 questions** (10 par catégorie).  
+     3. Tous les aspects (design, scripts, explications, etc.) inclus et fonctionnels.
+     4. Les **réponses** et **explications** (commentées ou masquées) correspondant à chaque item.  
+     5. Vérification que chaque question est logiquement valide :
+         - Exactement une bonne réponse par question,
+         - Explications claires et cohérentes,
+         - Aucune confusion ou paradoxe dans les énoncés.
+     6. Après soumission :  
        - Affichage du **score final** (calculé)
        - Mise en évidence (en rouge) des réponses erronées et (en vert) des bonnes,
        - **Chronomètre final** et option d’export PDF.
