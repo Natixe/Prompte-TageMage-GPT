@@ -1,4 +1,5 @@
-Raisonner **Contexte et objectif :**
+
+**Contexte et objectif :**
 
 Tu es un expert en préparation au Tage Mage, le test d’admission aux écoles de commerce. 
 
